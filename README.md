@@ -68,20 +68,22 @@ O fluxo do **LangGraph** garante que o chatbot siga regras rígidas de triagem:
    ```bash
    git clone https://github.com/roboberto1403/chatbot.git
    cd chatbot
+   ```
    
-2.  Crie e ambiente virtual:
+2.  Crie o ambiente virtual:
    ```bash
    cd server
    python -m venv venv
+   ```
 
 3. Instale as dependências:
   ```bash
   pip install -r requirements.txt
   cd ..
   npm install
+  ```
 
 4. Configure as variáveis de ambiente em .env:
-  ```bash
   GOOGLE_API_KEY="sua_chave"
   MONGODB_URI="sua_uri"
 
@@ -90,14 +92,17 @@ O fluxo do **LangGraph** garante que o chatbot siga regras rígidas de triagem:
   cd server
   venv\Scripts\activate
   uvicorn main:app --reload
+  ```
 
 6. Exponha o servidor com o Ngrok e configure a rota gerada em API_URL dentro do arquivo app.json
   ```bash
-  ngrok http 8000
+  ngrok http 8000  
+  ```
 
 7. Rode o Expo
   ```bash
   npm start
+  ```
 
 ---
 
