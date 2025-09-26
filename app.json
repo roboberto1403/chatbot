@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "extra": {
+      "API_URL": "https://a4e8567e83f2.ngrok-free.app"
     }
   }
 }
