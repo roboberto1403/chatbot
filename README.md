@@ -58,28 +58,57 @@ O fluxo do **LangGraph** garante que o chatbot siga regras rígidas de triagem:
 
 ## 🖼️ Visualização do Grafo
 
-## 🧩 Funcionamento do Grafo
-
-O fluxo do **LangGraph** garante que o chatbot siga regras rígidas de triagem:
-
-1. **chatbot** → Interage com o usuário e coleta dados.  
-   - Gera JSON com `next_response` e `triagem_data`.  
-   - Se usuário confirmar resumo → seta `resumo_confirmado = True`.
-
-2. **router_emergency** → Checa se houve palavras-chave de emergência.  
-   - Se detectado → vai para `emergency_protocol`.  
-   - Caso contrário → segue para `end_or_continue`.
-
-3. **emergency_protocol** → Emite alerta 🚨 e encerra triagem.
-
-4. **end_or_continue** → Decide entre:  
-   - Encerrar (se resumo confirmado ou limite de turnos alcançado).  
-   - Voltar ao `chatbot` para coletar mais informações.  
+<img width="1900" height="1318" alt="image" src="https://github.com/user-attachments/assets/8cc07c68-a0b5-4732-aefc-0e4dfdf2f66b" />
 
 ---
 
-## 🖼️ Visualização do Grafo
+## ▶️ Como Rodar Localmente
 
-<img width="1900" height="1318" alt="image" src="https://github.com/user-attachments/assets/8cc07c68-a0b5-4732-aefc-0e4dfdf2f66b" />
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/roboberto1403/chatbot.git
+   cd chatbot
+   
+2.  Crie e ambiente virtual:
+   ```bash
+   cd server
+   python -m venv venv
+
+3. Instale as dependências:
+  ```bash
+  pip install -r requirements.txt
+  cd ..
+  npm install
+
+4. Configure as variáveis de ambiente em .env:
+  ```bash
+  GOOGLE_API_KEY="sua_chave"
+  MONGODB_URI="sua_uri"
+
+5. Inicie a API
+  ```bash
+  cd server
+  venv\Scripts\activate
+  uvicorn main:app --reload
+
+6. Exponha o servidor com o Ngrok e configure a rota gerada em API_URL dentro do arquivo app.json
+  ```bash
+  ngrok http 8000
+
+7. Rode o Expo
+  ```bash
+  npm start
+
+---
+
+## 🚧 Limitações
+
+   - A funcionalidade de identificação de palavras de emergência apresenta inconsistências.
+
+   - É possível identificar alguns bugs visuais que não atrapalham a experiência de forma grave.
+
+## 📝 Licença
+
+Este projeto está sob a licença [MIT license](https://opensource.org/licenses/MIT).
 
 ---
