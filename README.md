@@ -70,7 +70,7 @@ O fluxo do **LangGraph** garante que o chatbot siga regras rígidas de triagem:
    cd chatbot
    ```
    
-2.  Crie o ambiente virtual:
+2. Crie o ambiente virtual:
    ```bash
    cd server
    python -m venv venv
